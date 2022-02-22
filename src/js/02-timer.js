@@ -45,6 +45,7 @@ function onBtnClick() {
     if (deltaTime < 1000) {
         clearInterval(interval);
     }
+    dateInput.setAttribute('disabled', 'true');
 }
 function convertMs(ms) {
     const second = 1000;
@@ -76,4 +77,3 @@ dateInput.style.marginLeft = 'auto';
 startBtn.style.margin = 'auto';
 startBtn.style.position = 'absolute';
 startBtn.style.left = '50vw';
-

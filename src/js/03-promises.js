@@ -16,13 +16,13 @@ function createPromise(position, delay) {
 }
 let promiseValue = {};
 function receiveFormData(event) {
-  promiseValue[event.target.name] = event.target.value;
+  promiseValue[event.target.name] = Number(event.target.value);
 }
 function onFormSubmit(event) {
   event.preventDefault();
-  let delay = +promiseValue.delay;
-  let delayStep = +promiseValue.step;
-  let amount = +promiseValue.amount;
+  let delay = promiseValue.delay;
+  let delayStep = promiseValue.step;
+  let amount = promiseValue.amount;
   for (let i = 1; i <= amount; i++) {
     createPromise(i, delay)
       .then(({ position, delay }) => {
